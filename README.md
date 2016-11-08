@@ -21,6 +21,12 @@ Project aims at Optimizing this online portfolio for speed and getting a score a
 
 ### Optimizations on views/js/main.js
 
-* UpdatePositions()
+ UpdatePositions():-Declared new variables to do calculations outside the for-loop. Declared an array to store the repeating values. Replaced document.querySelector with document.getElementsByClassName. Used style.transform instead of style.left
 
- Declared new variables to do calculations outside the for-loop. Declared an array to store the repeating values. Replaced document.querySelector with document.getElementsByClassName. Used style.transform instead of style.left
+  scroll event listener:-window.requestAnimationFrame method was used to optimize concurrent animations together into a single reflow and repaint cycle.
+
+  Reduced the number of pizzas from 200 to 31.
+
+  ### Optimizations on views/css/main.js
+
+  will-change: transform was added to mover class.
