@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
         console.log("bug in sizeSwitcher");
     }
 
-    var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + '%';
@@ -511,7 +511,6 @@ function updatePositions() {
     var phase = constArray[i % 5];
         var distance = items[i].style.left;
          distance = items[i].basicLeft + 100 * phase - (widthMove) + 'px';
-      //  pixel = items[i].basicLeft + 100 * phases + 'px';
        items[i].style.transform = 'translateX(' + distance + ')';
   }
 
@@ -536,30 +535,15 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var colNum = Math.ceil(window.innerWidth / s);
-    var rowNum = Math.ceil(window.innerHeight / s);
-    var NumPizzasOnScreen = colNum * rowNum;
-     var readyPizza = document.getElementById("movingPizzas1");
-     //reduced umber of pizzas on screen relative to screen's height & width
-
-     for (var i = 0; i < NumPizzasOnScreen; i++) {
-       var elem = document.createElement('img');
-       elem.className = 'mover';
-       elem.src = "images/pizza.png";
-       elem.style.height = "100px";
-       elem.style.width = "73.333px";
-       elem.basicLeft = (i % cols) * s;
-       elem.style.top = (Math.floor(i / cols) * s) + 'px';
-       readyPizza.appendChild(elem);
-  //for (var i = 0; i < 31; i++) {
-  //  var elem = document.createElement('img');
-  //  elem.className = 'mover';
-    //elem.src = "images/pizza.png";
-  //  elem.style.height = "100px";
-    //elem.style.width = "73.333px";
-    //elem.basicLeft = (i % cols) * s;
-    //elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    //document.getElementById("movingPizzas1").appendChild(elem);
+  for (var i = 0; i < 31; i++) {
+   var elem = document.createElement('img');
+   elem.className = 'mover';
+    elem.src = "images/pizza.png";
+    elem.style.height = "100px";
+    elem.style.width = "73.333px";
+    elem.basicLeft = (i % cols) * s;
+    elem.style.top = (Math.floor(i / cols) * s) + 'px';
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
 
   updatePositions();
